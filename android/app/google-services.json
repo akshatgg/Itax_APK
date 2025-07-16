@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "666303487933",
+    "project_id": "itax-easy",
+    "storage_bucket": "itax-easy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:666303487933:android:36d1a0d5742a80ffa5bcd4",
+        "android_client_info": {
+          "package_name": "com.example.itax_easy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "666303487933-sduqni6leqta2n5jm5tm515b79m3abn7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.itax_easy",
+            "certificate_hash": "ebefd131ee55e6fc7c64210c5219ceabcb7c4146"
+          }
+        },
+        {
+          "client_id": "666303487933-etklau4u1b8mpmq3ohib6augoqi6kmhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUSxLfyFmZz5UQmy03nv4LH-ljxRuu9oo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "666303487933-etklau4u1b8mpmq3ohib6augoqi6kmhq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "666303487933-h6h73ncso4qa63ofpcrg7qoe9fjadcm1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.itaxEasy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

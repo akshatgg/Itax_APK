@@ -1,0 +1,58 @@
+enum AppRoutes {
+  splash('/splash', 'splash'),
+  splashNext('/splashNext', 'splashNext'),
+  signIn('/signIn', 'signIn'),
+  signup('/signup', 'signup'),
+  profile('/profile', 'profile'),
+  blog('/blog', 'blog'),
+  verifyOtp('/verifyOtp', 'verifyOtp'),
+  blank('/blank', 'blank'),
+  dashboardView('/dashboardView', 'dashboardView'),
+  tools('/tools', 'tools'), // 👈 Add this line
+  bankCalculator('/bankCalculator', 'bankCalculator'),
+  incomeTaxCalculator('/incomeTaxCalculator', 'incomeTaxCalculator'),
+  gstCalculator('/gstCalculator', 'gstCalculator'),
+  investmentCalculator('/investmentCalculator', 'investmentCalculator'),
+  loanCalculator('/loanCalculator', 'loanCalculator'),
+  insuranceCalculator('/insuranceCalculator', 'insuranceCalculator'),
+  partyView('/partyView', 'partyView'),
+  itemView('/itemView', 'itemView'),
+  reportView('/reportView', 'reportView'),
+  moreView('/moreView', 'moreView'),
+  homeView('/homeView', 'homeView'),
+  reportDay('/reportDay', 'reportDay'),
+  reportExpanse('/reportExpanse', 'reportExpanse'),
+  addCategory('/addCategory', 'addCategory'),
+  reportInactiveCustomer('/reportInactiveCustomer', 'reportInactiveCustomer'),
+  reportInactiveItem('/reportInactiveItem', 'reportInactiveItem'),
+  reportTrialBalance('/reportTrialBalance', 'reportTrialBalance'),
+  reportProfitLoss('/reportProfitLoss', 'reportProfitLoss'),
+  reportCapitalAccount('/reportCapitalAccount', 'reportCapitalAccount'),
+  reportBalanceSheet('/reportBalanceSheet', 'reportBalanceSheet'),
+  addEditItem('/addEditItem', 'addEditItem'),
+  addParty('/addParty', 'addParty'),
+  itemDetail('/itemDetail', 'itemDetail'),
+  customerDetail('/customerDetail', 'customerDetail'),
+  moreMyCompany('/moreMyCompany', 'moreMyCompany'),
+  moreManageUser('/moreManageUser', 'moreManageUser'),
+  moreGstSetUp('/moreGstSetUp', 'moreGstSetUp'),
+  moreMyCompanyDetail('/moreMyCompanyDetail', 'moreMyCompanyDetail'),
+  moreAboutUs('/moreAboutUs', 'moreAboutUs'),
+  morePrivacyPolicy('/morePrivacyPolicy', 'morePrivacyPolicy'),
+  createSalesInvoice('/createSalesInvoice', 'createSalesInvoice'),
+  createReceiptInvoice('/createReceiptInvoice', 'createReceiptInvoice'),
+  createNoteInvoice('/createNoteInvoice', 'createNoteInvoice'),
+  unPaidInvoice('/unPaidInvoice', 'unPaidInvoice'),
+  salesScreen('/salesScreen', 'salesScreen'),
+  salesCustomerDetailScreen(
+      '/salesCustomerDetailScreen', 'salesCustomerDetailScreen'),
+  salesCustomerScreen('/salesCustomerScreen', 'salesCustomerScreen'),
+  salesMonthScreen('/salesMonthScreen', 'salesMonthScreen'),
+  partyDetail('/partyDetail', 'partyDetail'),
+  addCompany('/addCompany', 'addCompany'),;
+
+  const AppRoutes(this.path, this.name);
+
+  final String path;
+  final String name;
+}

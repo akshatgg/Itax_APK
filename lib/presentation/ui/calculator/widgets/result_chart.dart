@@ -1,0 +1,163 @@
+// ignore_for_file: use_super_parameters, curly_braces_in_flow_control_structures
+
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../core/constants/app_text_style.dart';
+import '../../../../core/constants/color_constants.dart';
+
+class ResultChart extends StatelessWidget {
+  final List<ChartData> dataEntries;
+  final List<SummaryRowData> summaryRows;
+
+  const ResultChart({
+    Key? key,
+    required this.dataEntries,
+    required this.summaryRows,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // Show nothing if no data
+    if (dataEntries.isEmpty || summaryRows.isEmpty)
+      return const SizedBox.shrink();
+
+    return Column(
+      children: [
+        // Pie Chart
+        SizedBox(
+          height: 150,
+          child: PieChart(
+            PieChartData(
+              startDegreeOffset: 180,
+              sectionsSpace: 2,
+              centerSpaceRadius: 40,
+              sections: dataEntries
+                  .map(
+                    (entry) => PieChartSectionData(
+                      value: entry.value,
+                      color: entry.color,
+                      showTitle: false,
+                    ),
+                  )
+                  .toList(),
+            ),
+          ),
+        ),
+
+        // Legend
+        Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 20,
+            children: dataEntries
+                .map(
+                  (entry) => LegendItem(color: entry.color, text: entry.label),
+                )
+                .toList(),
+          ),
+        ),
+
+        const SizedBox(height: 20),
+
+        // Summary Box
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 6,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Column(
+              children: summaryRows.map((row) {
+                return Column(
+                  children: [
+                    SummaryRow(
+                      label: row.label,
+                      value: row.value,
+                      percentage: row.percentage,
+                    ),
+                    const Divider(),
+                  ],
+                );
+              }).toList(),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ChartData {
+  final double value;
+  final Color color;
+  final String label;
+
+  ChartData({required this.value, required this.color, required this.label});
+}
+
+class SummaryRowData {
+  final String label;
+  final double? value;
+  final String? percentage;
+
+  SummaryRowData({required this.label, this.value, this.percentage});
+}
+
+class LegendItem extends StatelessWidget {
+  final Color color;
+  final String text;
+
+  const LegendItem({required this.color, required this.text, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(width: 12, height: 12, color: color),
+        const SizedBox(width: 4),
+        Text(text, style: const TextStyle(fontSize: 12)),
+      ],
+    );
+  }
+}
+
+class SummaryRow extends StatelessWidget {
+  final String label;
+  final double? value;
+  final String? percentage;
+
+  const SummaryRow({required this.label, this.value, this.percentage, Key? key})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(child: Text(label, style: AppTextStyle.body16)),
+        if (percentage != null)
+          Text(
+            percentage!,
+            style: AppTextStyle.heading20.copyWith(color: AppColor.primary),
+          )
+        else if (value != null)
+          Text(
+            '₹ ${value!.toStringAsFixed(0)}',
+            style: AppTextStyle.heading20.copyWith(color: AppColor.primary),
+          ),
+      ],
+    );
+  }
+}

@@ -1,0 +1,2 @@
+D:/itax_easy/android/app/.cxx/RelWithDebInfo/1l6i5r3q/x86_64/CMakeFiles/edit_cache.dir
+D:/itax_easy/android/app/.cxx/RelWithDebInfo/1l6i5r3q/x86_64/CMakeFiles/rebuild_cache.dir
