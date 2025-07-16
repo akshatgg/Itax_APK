@@ -1,36 +1,37 @@
-# itax_easy
+# ✅ Work Done by Rupesh
 
-## 🔄 Recent Changes
+## 🔄 Routing System Overhaul
+- [x] Integrated `GoRouter` with `StatefulShellRoute.indexedStack` to maintain tab state.
+- [x] Defined all routes in `AppRoutes` and managed via `AppRouter`.
+- [x] Enabled nested routing for scalable, modular navigation.
 
-### 🧭 Routing System Overhaul
+## 🔐 Authentication Flow Integration
+- [x] Integrated login and signup routes into the main navigation flow.
+- [x] Implemented auth-aware navigation with redirection for unauthenticated users.
+- [ ] Google login error handling – **Assigned to Maulik**.
 
-- Integrated `GoRouter` with `StatefulShellRoute.indexedStack` to preserve navigation state across
-  tabs.
-- Defined route paths in `AppRoutes` and structured them via `AppRouter`.
-- Enabled nested routing for scalable multi-tab navigation.
+## 🧱 BLoC Architecture
+- [x] Injected domain-specific BLoCs (`UserBloc`, `CompanyBloc`, `InvoiceBloc`, etc.) using `getIt`.
+- [x] Used `BlocProvider.value` and `MultiBlocProvider` for scoped state management.
 
-### 🧱 BLoC Integration per Route
+## 📱 Custom Bottom Navigation Bar
+- [x] Created `CustomBottomAppBar` with equal spacing via `Expanded`.
+- [x] Supported both `Icons` and `Image.asset`.
+- [x] Highlighted selected tab.
+- [x] Designed rounded top corners and subtle elevation.
 
-- Injected domain-specific BLoCs using `getIt` (e.g., `UserBloc`, `CompanyBloc`, `InvoiceBloc`,
-  etc.).
-- Used `BlocProvider.value` and `MultiBlocProvider` for scoped state management inside route
-  builders.
+## 🚫 Interaction Tweaks
+- [x] Disabled splash/ripple effects on bottom nav using `InkWell` and `NoSplash` interaction.
 
-### 📱 Custom Bottom Navigation Bar
+## 🎨 UI/UX Enhancements
+- [x] Increased bottom bar height and padding for better touch ergonomics.
+- [x] Applied consistent design using `AppTextStyle` and `AppColor`.
 
-- Added `CustomBottomAppBar` widget with:
-    - Equal distribution using `Expanded`.
-    - Support for both `Icons` and `Image.asset`.
-    - State-based selection styling (highlighting selected tab).
-    - Rounded top corners and subtle elevation.
+## 🧩 Reusable UI Components
+- [x] Created multiple modular UI widgets to support forms, layouts, and dynamic sections.
 
-### 🚫 Removed Visual Feedback
-
-- Disabled tap feedback (no splash or ripple effect) on bottom navigation items for a cleaner UX.
-- Achieved via `InkWell` settings and global theme or `NoSplash` interaction behavior.
-
-### ✨ General UI/UX Improvements
-
-- Increased bottom bar height and padding for better touch targets.
-- Consistent style using `AppTextStyle` and `AppColor`.
-
+## 🧮 Feature Additions
+- [x] Integrated all calculators (GST, Income Tax, etc.).
+- [x] Built the complete ITR filing flow (step-by-step interface).
+- [x] Developed the View Section UI for document and data review.
+- [x] Integrated OCR module for extracting data from PAN, Aadhaar, and invoice images.
